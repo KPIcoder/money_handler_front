@@ -5,6 +5,8 @@ import ExamplePage from "../pages/ExamplePage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import { ENDPOINTS } from "./endpoints";
+import TransactionPage from "../pages/TransactionPage";
+import AboutPage from "../pages/AboutPage";
 
 export const router = createBrowserRouter([
   {
@@ -13,25 +15,33 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to={ENDPOINTS.login} />,
+        element: <Navigate to={ENDPOINTS.transactions} />,
         index: true,
       },
       {
-        path: ENDPOINTS.login,
-        element: <LoginPage />,
+        path: ENDPOINTS.transactions,
+        element: <TransactionPage />,
       },
       {
-        path: ENDPOINTS.register,
-        element: <RegisterPage />,
+        path: ENDPOINTS.about,
+        element: <AboutPage />,
       },
-      {
-        path: ENDPOINTS.user,
-        element: (
-          <AuthGuard>
-            <ExamplePage />
-          </AuthGuard>
-        ),
-      },
+      // {
+      //   path: ENDPOINTS.login,
+      //   element: <LoginPage />,
+      // },
+      // {
+      //   path: ENDPOINTS.register,
+      //   element: <RegisterPage />,
+      // },
+      // {
+      //   path: ENDPOINTS.user,
+      //   element: (
+      //     <AuthGuard>
+      //       <ExamplePage />
+      //     </AuthGuard>
+      //   ),
+      // },
     ],
   },
 ]);

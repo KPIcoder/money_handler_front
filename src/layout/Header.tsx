@@ -20,9 +20,9 @@ const Header: FC = () => {
         justifyContent="center"
         columnGap={5}
       >
-        <StyledNavLink to={ENDPOINTS.login}>Login</StyledNavLink>
+        <StyledNavLink to={ENDPOINTS.transactions}>Home</StyledNavLink>
 
-        <StyledNavLink to={ENDPOINTS.user}>User</StyledNavLink>
+        <StyledNavLink to={ENDPOINTS.about}>About</StyledNavLink>
       </Box>
       <Divider />
       <Outlet />

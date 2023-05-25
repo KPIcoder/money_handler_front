@@ -7,6 +7,7 @@ import {
 import { Res } from "../../interfaces/common";
 // redux
 import { baseQueryWithReauth } from "./baseQueryWithReauth";
+import { Transaction } from "../../interfaces/transaction.interface";
 
 // enum Tags {
 //   authUser = 'Auth User'
@@ -95,6 +96,35 @@ export const api = createApi({
       query: () => "/user",
       providesTags: ["AuthUser"],
     }),
+    getTransactions: builder.query<Res<Transaction[]>, void>({
+      query: () => "/transaction",
+    }),
+    addTransaction: builder.mutation<Res<Transaction>, Transaction>({
+      query(transaction) {
+        return {
+          method: "POST",
+          url: "/transaction",
+          body: transaction,
+        };
+      },
+    }),
+    deleteTransaction: builder.mutation<Res<string>, { id: number }>({
+      query(id) {
+        return {
+          method: "DELETE",
+          url: `/transaction?id=${id}`,
+        };
+      },
+    }),
+    updateTransaction: builder.mutation<Res<Transaction>, Transaction>({
+      query(transaction) {
+        return {
+          method: "UPDATE",
+          url: "/transaction",
+          body: transaction,
+        };
+      },
+    }),
   }),
 });
 
@@ -105,4 +135,9 @@ export const {
   useResetTokensQuery,
   useGetUsersQuery,
   useGetAuthUserQuery,
+
+  useGetTransactionsQuery,
+  useAddTransactionMutation,
+  useDeleteTransactionMutation,
+  useUpdateTransactionMutation,
 } = api;
