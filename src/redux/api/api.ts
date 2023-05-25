@@ -6,7 +6,6 @@ import {
 } from "../../interfaces/auth.interface";
 import { Res } from "../../interfaces/common";
 // redux
-import { authActions } from "../slices/auth.slice";
 import { baseQueryWithReauth } from "./baseQueryWithReauth";
 
 // enum Tags {
@@ -27,9 +26,8 @@ export const api = createApi({
         };
       },
       invalidatesTags: ["AuthUser"],
-      async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+      async onQueryStarted(arg, { queryFulfilled }) {
         const { data: response } = await queryFulfilled;
-        dispatch(authActions.setAuthUser(response.data));
       },
     }),
     login: builder.mutation<Res<IAuthUser>, IAuthUserLoginInfo>({
@@ -41,22 +39,26 @@ export const api = createApi({
           credentials: "include",
         };
       },
-      async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+      async onQueryStarted(arg, { queryFulfilled }) {
         const { data: response } = await queryFulfilled;
-        dispatch(authActions.setAuthUser(response.data));
         localStorage.setItem("accessToken", response.data.access_token);
         localStorage.setItem("refreshToken", response.data.refresh_token);
       },
     }),
-    logout: builder.query({
+    logout: builder.mutation<Res<void>, void>({
       query() {
+        const accessToken = localStorage.getItem("accessToken");
         return {
           url: "auth/logout",
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${accessToken}`,
+          },
         };
       },
-      async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+      async onQueryStarted(arg, { queryFulfilled }) {
         await queryFulfilled;
-        dispatch(authActions.logout());
+        localStorage.clear();
       },
     }),
     resetTokens: builder.query<
@@ -99,7 +101,7 @@ export const api = createApi({
 export const {
   useRegisterMutation,
   useLoginMutation,
-  useLogoutQuery,
+  useLogoutMutation,
   useResetTokensQuery,
   useGetUsersQuery,
   useGetAuthUserQuery,

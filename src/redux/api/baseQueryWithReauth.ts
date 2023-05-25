@@ -5,8 +5,13 @@ import {
   FetchBaseQueryError,
 } from "@reduxjs/toolkit/query/react";
 
+const baseUrl =
+  import.meta.env.MODE === "development"
+    ? import.meta.env.VITE_DEV_API_URL
+    : import.meta.env.VITE_PRODUCTION_API_URL;
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_API_URL,
+  baseUrl: baseUrl,
   credentials: "include",
   prepareHeaders: (headers) => {
     headers.set("Content-Type", "application/json");

@@ -11,6 +11,8 @@ const AuthGuard: FC<Props> = ({ children }) => {
   const { isAuthenticated } = useAuth();
   const { pathname } = useLocation();
 
+  console.log(isAuthenticated);
+
   if (!isAuthenticated) {
     return <Navigate to={ENDPOINTS.login} state={pathname} />;
   }

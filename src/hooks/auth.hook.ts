@@ -5,7 +5,7 @@ export const useAuth = () => {
   const [cookies] = useCookies();
   const { data: response } = useGetAuthUserQuery();
 
-  const isAuthenticated = cookies.isAuthorised;
+  const isAuthenticated = !!cookies.isAuthorised ?? false;
   const authUser = response?.data;
   return { isAuthenticated, authUser };
 };
