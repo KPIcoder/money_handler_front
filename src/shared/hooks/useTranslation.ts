@@ -10,7 +10,7 @@ export const useTranslate = (options?: TranslationOptions) => {
   const langCode = getUserLanguage(LANGUAGE_CODES, DEFAULT_LANGUAGE_CODE) as 'ua';
   const locale = LOCALES[langCode];
 
-  return function t(text: string, options?: TranslationOptions) {
+  return function t(text: string) {
     const { strict } = options ?? {};
     // TODO: need to transform text by removing signs
     if (strict) return locale[text as keyof typeof locale] ?? text;
