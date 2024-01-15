@@ -1,3 +1,5 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-export const Header: FC<{ title: string }> = ({ title }) => <h1>{title}</h1>;
+const Header: FC<{ title: string }> = ({ title }) => <h1>{title}</h1>;
+
+export default Header;
