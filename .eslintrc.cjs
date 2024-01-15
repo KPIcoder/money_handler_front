@@ -36,8 +36,8 @@ module.exports = {
       },
     ],
 
-    'import/extensions': ['error', 'never', { svg: 'always', png: 'always' }],
-
+    'import/extensions': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.tsx', '**/*.test.ts'] }],
     // Ordering of imports
     'import/order': [
       'warn',
