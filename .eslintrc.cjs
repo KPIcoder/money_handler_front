@@ -36,6 +36,9 @@ module.exports = {
       },
     ],
 
+    '@typescript-eslint/no-empty-interface': 'off',
+    'react/jsx-props-no-spreading': ['error', { html: 'ignore' }],
+
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.tsx', '**/*.test.ts'] }],
     // Ordering of imports

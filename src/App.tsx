@@ -1,6 +1,8 @@
 import type { FC } from 'react';
-import HomePage from './home-page/home.page';
+import './index.css';
 
-const App: FC = () => <HomePage />;
+import LandingPage from './landing-page/landing.page';
+
+const App: FC = () => <LandingPage />;
 
 export default App;

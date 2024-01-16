@@ -1,0 +1,22 @@
+:root {
+  --black-main: #000101;
+
+  --brown-500: #34270c;
+  --brown-300: #533f13;
+  --brown-200: #644b17;
+
+  --light-grey-100: #f4f2f3;
+  --light-grey-200: #ebe9ec;
+
+  --orange-main: #f79e19;
+  --orange-500: #d98508;
+  --orange-200: #f9b44e;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  box-sizing: border-box;
+}
