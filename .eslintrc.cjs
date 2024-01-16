@@ -25,6 +25,7 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/consistent-type-imports': 'error',
+    'react/require-default-props': 'off',
 
     'react/react-in-jsx-scope': 'off',
 

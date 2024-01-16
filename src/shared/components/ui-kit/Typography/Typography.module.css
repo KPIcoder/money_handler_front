@@ -1,0 +1,40 @@
+.shared {
+  color: var(--black-main);
+}
+
+.typography_h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+
+.typography_h2 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+.typography_h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.25rem;
+}
+.typography_h4 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+.typography_body1 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+.typography_body2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+}
+.typography_caption {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 0.95rem;
+}

@@ -1,0 +1,10 @@
+.main {
+  background-color: var(--orange-main);
+  color: var(--black-main);
+}
+
+.shared {
+  box-sizing: border-box;
+  padding: 9px 19px;
+  border: none;
+}
