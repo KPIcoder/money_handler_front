@@ -1,22 +1,20 @@
 import type { FC } from 'react';
+import { GreetingSection } from './components';
+import css from './landing.page.module.css';
 import { Footer, Header } from './layout';
-import { Button, Typography } from '@/shared/components/ui-kit';
 
 const LandingPage: FC = () => {
   return (
     <>
       <Header />
-      <main style={{ padding: 10 }}>
-        <Typography variant="h1">I am heading h1</Typography>
-        <Typography variant="h2">I am heading h2</Typography>
-        <Typography variant="h3">I am heading h3</Typography>
-        <Typography variant="h4">I am heading h4</Typography>
-        <Typography variant="body1">I am paragraph body1</Typography>
-        <Typography variant="body2">I am paragraph body2</Typography>
-        <Typography variant="caption">I am caption</Typography>
-        <div>
-          <Button variant="main">I am action button</Button>
-        </div>
+      <main className={css.landing_main}>
+        <GreetingSection />
+
+        <img
+          className={css.landing_image}
+          src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmluYW5jZXN8ZW58MHx8MHx8fDA%3D"
+          alt="money"
+        />
       </main>
       <Footer />
     </>

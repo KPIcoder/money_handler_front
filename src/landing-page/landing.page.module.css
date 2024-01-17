@@ -1,0 +1,35 @@
+.landing_main {
+  padding: 120px 100px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+.landing_image {
+  width: 500px;
+  margin-right: 100px;
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+  .landing_main {
+    padding: 60px 50px;
+  }
+
+  .landing_image {
+    width: 350px;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .landing_main {
+    gap: 20px;
+  }
+
+  .landing_image {
+    align-self: center;
+    width: 280px;
+  }
+}

@@ -7,6 +7,9 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, 
   variant?: TypographyVariant;
 }
 
+// TODO: rewrite switch. WTF did I use it?
+// TODO: join classes
+
 const Typography: FC<Props> = ({ variant = 'body1', children, ...props }) => {
   switch (variant) {
     case 'h1':

@@ -1,0 +1,9 @@
+.greeting_text {
+  max-width: 420px;
+}
+.greeting_buttons {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
