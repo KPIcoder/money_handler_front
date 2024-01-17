@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import LandingPage from './landing.page';
 
-describe('<GreetingSection />', () => {
+describe('Landing Page', () => {
   it('renders the component and checks for specific text', () => {
     render(<LandingPage />);
 
